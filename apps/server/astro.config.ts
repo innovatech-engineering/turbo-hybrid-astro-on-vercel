@@ -9,6 +9,10 @@ import image from '@astrojs/image'
 // alternatively, use '@astrojs/vercel/edge'
 import vercel from '@astrojs/vercel/serverless'
 
+import { loadEnv } from "vite";
+const { ENV_TEST } = loadEnv(process.env.NODE_ENV, process.cwd(), "");
+console.log('ENV_TEST', JSON.stringify(ENV_TEST));
+
 const siteUrl =
   process.env.VERCEL_ENV === 'production'
     ? 'https://turbo-hybrid-astro-on-vercel.vercel.app/' // 'your.prod.domain.here'
