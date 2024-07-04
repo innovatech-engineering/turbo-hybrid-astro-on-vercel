@@ -4,6 +4,9 @@ import { APIRoute } from 'astro'
 // -> gets executed as a Vercel Function (locally: Node.js)
 // see: https://docs.astro.build/de/core-concepts/endpoints/#server-endpoints-api-routes
 export const get: APIRoute = async ({ params, request, url }) => {
+  
+  console.log('adming-login: env:', JSON.stringify(import.meta.env))
+  
   if (
     url.searchParams.get('username') !== import.meta.env.ADMIN_USERNAME ||
     url.searchParams.get('password') !== import.meta.env.ADMIN_PASSWORD
