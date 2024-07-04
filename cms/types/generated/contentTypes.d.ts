@@ -307,6 +307,7 @@ export interface ApiArticleArticle extends Schema.CollectionType {
     singularName: 'article'
     pluralName: 'articles'
     displayName: 'Article'
+    description: ''
   }
   options: {
     draftAndPublish: true
@@ -333,6 +334,12 @@ export interface ApiArticleArticle extends Schema.CollectionType {
       }> &
       Attribute.SetMinMaxLength<{
         maxLength: 144
+      }>
+    image: Attribute.Media<'images'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true
+        }
       }>
     createdAt: Attribute.DateTime
     updatedAt: Attribute.DateTime
