@@ -12,7 +12,7 @@ export const get: APIRoute = async ({ params, request, url }) => {
       status: 403,
       body: JSON.stringify({
         status: 'ERROR',
-        message: 'This was wrong.',
+        message: 'This was wrong. Params: U: '+url.searchParams.get('username')+' P: '+ url.searchParams.get('password') + " expecting: " + import.meta.env.ADMIN_USERNAME + " / " + import.meta.env.ADMIN_PASSWORD,
       }),
       headers: {
         'Content-Type': 'application/json',
