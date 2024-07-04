@@ -5,7 +5,7 @@ import { APIRoute } from 'astro'
 // see: https://docs.astro.build/de/core-concepts/endpoints/#server-endpoints-api-routes
 export const get: APIRoute = async ({ params, request, url }) => {
   
-  console.log('admig-login: import.meta.env:', JSON.stringify(import.meta.env))
+  console.log('admin-login: import.meta.env.ADMIN_USERNAME:', JSON.stringify(import.meta.env.ADMIN_USERNAME  ))
   
   if (
     url.searchParams.get('username') !== import.meta.env.ADMIN_USERNAME ||
