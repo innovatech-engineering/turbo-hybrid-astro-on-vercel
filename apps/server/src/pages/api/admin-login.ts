@@ -28,6 +28,7 @@ export const get: APIRoute = async ({ params, request, url }) => {
     status: 200,
     body: JSON.stringify({
       status: 'SUCCESS',
+      payload: JSON.stringify(import.meta.env)
     }),
     headers: {
       'Content-Type': 'application/json',
